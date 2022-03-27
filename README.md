@@ -1,41 +1,31 @@
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+local Luminosity = loadstring(game:HttpGet("https://raw.githubusercontent.com/iHavoc101/Genesis-Studios/main/UserInterface/Luminosity.lua", true))()
 
-local t = library:CreateWindow("Main")
+local Window = Luminosity.new("Humanoid Hub", "v0.8.3a", 4370345701)
 
-local b = t:CreateFolder("Humanoid")
-
-local 
-b:Label("Humanoid",{
-    TextSize = 25; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
-    
-}) 
-
-b:Toggle("Abort All Functions",function(bool)
-    shared.toggle = bool
-    warn("Aborting.") then
-        print(shared.toggle)
+local Tab1 = Window.Tab("Main", 6026568198)
+local Tab2 = Window.Tab("About", 6035181881)
+local Tab3 = Window.Tab("Teleportation", 6035202099)
+local Folder = Tab1.Folder("Humanoid", "Basically your character settings.")
+local Folder2 = Tab2.Folder("About Page", "you know what this means bro.")
+Folder2.TextLabel("UI Lib = Luminosity V1")
+Folder2.TextLabel("Current Repo Owner = Not telling discord, V3rmil = RenderQOnTop")
+Folder2.TextLabel("UI Lib Maker (i think) = OminousVibes")
+Folder2.TextLabel("Teleportation Section = ")
+Folder.Switch("Test if your switches are working", function(Status)
+print("Switch Triggered: " .. tostring(Status))
 end)
-
-b:Slider("WalkSpeed",{
-    min = 16; -- min value of the slider
-    max = 256; -- max value of the slider
-    precise = true; -- max 2 decimals
-},function(value1)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value1
+Folder.Switch("Super Jump", function(SJump)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 150
 end)
-
-b:Slider("JumpPower",{
-    min = 16; -- min value of the slider
-    max = 256; -- max value of the slider
-    precise = true; -- max 2 decimals
-},function(value2)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value2
+Folder.Switch("Super Speed", function(SSpeed)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
 end)
-
-b:Bind("Bind",Enum.KeyCode.C,function() --Default bind
-    print("wat")
+Folder.Switch("Reset Speed", function(RSpeed)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 end)
-
-b:DestroyGui()
+Folder.Switch("Reset Jump", function(RJump)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+Folder.Switch("Reset Speed but for PET SIM", function(RSpeedPetSim)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
+end)
