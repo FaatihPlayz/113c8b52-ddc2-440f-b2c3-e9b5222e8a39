@@ -2,7 +2,7 @@ local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aika
 
 local t = library:CreateWindow("Main")
 
-local b = Humanoid
+local b = t:CreateFolder("Humanoid")
 
 local 
 b:Label("Humanoid",{
@@ -35,5 +35,7 @@ b:Slider("JumpPower",{
 end)
 
 b:Bind("Bind",Enum.KeyCode.C,function() --Default bind
-    b:DestroyGui()
+    print("wat")
 end)
+
+b:DestroyGui()
