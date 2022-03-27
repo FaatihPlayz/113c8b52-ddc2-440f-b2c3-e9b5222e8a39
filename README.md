@@ -4,7 +4,6 @@ local Window = Luminosity.new("Humanoid Hub", "v0.8.3a", 4370345701)
 
 local Tab1 = Window.Tab("Main", 6026568198)
 local Tab2 = Window.Tab("About", 6035181881)
-local Tab3 = Window.Tab("Teleportation", 6035202099)
 local Folder = Tab1.Folder("Humanoid", "Basically your character settings.")
 local Folder2 = Tab2.Folder("About Page", "you know what this means bro.")
 Folder2.TextLabel("UI Lib = Luminosity V1")
